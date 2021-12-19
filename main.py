@@ -7,5 +7,5 @@ screen = pygame.display.set_mode((800, 600))
 running = True
 while running:
     for event in pygame.event.get():
-        if event.tyype == pygame.quit():
+        if event.type == pygame.QUIT:
             running = False
