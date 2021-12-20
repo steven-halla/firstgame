@@ -17,6 +17,7 @@ enemyImg = pygame.image.load('ufo.png')
 enemyX = random.randint(0, 800)
 enemyY = random.randint(50, 150)
 enemyX_Change = 0
+enemyY_Change = 0
 
 
 def player(x, y):
