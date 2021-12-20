@@ -16,22 +16,19 @@ playerX_Change = 0
 enemyImg = pygame.image.load('ufo.png')
 enemyX = random.randint(0, 800)
 enemyY = random.randint(50, 150)
-enemyX_Change = 0
+enemyX_Change = 0.3
 enemyY_Change = 0
 
 
-def player(x, y):
+def draw_player(x, y):
     screen.blit(playerImg, (x, y))
 
 
-def enemy(x, y):
+def draw_enemy(x, y):
     screen.blit(enemyImg, (x, y))
 
 
 running = True
-
-# RGB
-screen.fill((0, 0, 0))
 
 while running:
     for event in pygame.event.get():
@@ -49,6 +46,7 @@ while running:
             if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
                 playerX_Change = 0
 
+    #setting up boundries for enemy and player
     playerX += playerX_Change
 
     if playerX <= 0:
@@ -56,6 +54,14 @@ while running:
     elif playerX >= 736:
         playerX = 736
 
-    player(playerX, playerY)
-    enemy(enemyX, enemyY)
+    enemyX += enemyX_Change
+
+    if enemyX <= 0:
+        enemyX_Change = 0.3
+    elif enemyX >= 736:
+        enemyX_Change = -0.3
+
+    screen.fill((0, 0, 0))
+    draw_player(playerX, playerY)
+    draw_enemy(enemyX, enemyY)
     pygame.display.update()
