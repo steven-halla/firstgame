@@ -16,8 +16,8 @@ playerX_Change = 0
 enemyImg = pygame.image.load('ufo.png')
 enemyX = random.randint(0, 800)
 enemyY = random.randint(50, 150)
-enemyX_Change = 0.3
-enemyY_Change = 0
+enemyX_Change = 2
+enemyY_Change = 40
 
 
 def draw_player(x, y):
@@ -57,9 +57,12 @@ while running:
     enemyX += enemyX_Change
 
     if enemyX <= 0:
-        enemyX_Change = 0.3
+        enemyX_Change = 2
+        enemyY += enemyY_Change
     elif enemyX >= 736:
-        enemyX_Change = -0.3
+        enemyX_Change = -2
+        enemyY += enemyY_Change
+
 
     screen.fill((0, 0, 0))
     draw_player(playerX, playerY)
