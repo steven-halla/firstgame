@@ -25,8 +25,17 @@ while running:
     #RGB
     screen.fill((0, 0, 0))
 
-    playerX += 0.5
-    print(playerX)
+    if event.type == pygame.KEYDOWN:
+        if event.key == pygame.K_LEFT:
+            print("left arrow is pressed")
+
+        if event.key == pygame.K_RIGHT:
+            print("right arrow is pressed")
+
+    if event.type == pygame.KEYUP:
+        if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
+            print("key is no longer being pressed")
+
 
     player(playerX, playerY)
     pygame.display.update()
