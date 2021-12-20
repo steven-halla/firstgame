@@ -29,15 +29,21 @@ while running:
 
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
-                playerX_Change = -.05
+                playerX_Change = -0.9
 
             if event.key == pygame.K_RIGHT:
-                playerX_Change = .05
+                playerX_Change = 0.9
 
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
                 playerX_Change = 0
 
     playerX += playerX_Change
+
+    if playerX <= 0:
+        playerX = 0
+    elif playerX >= 736:
+        playerX = 736
+
     player(playerX, playerY)
     pygame.display.update()
