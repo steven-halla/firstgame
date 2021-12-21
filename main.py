@@ -57,6 +57,7 @@ while running:
                 playerX_Change = 2.9
 
             if event.key == pygame.K_SPACE:
+                bulletX = playerX
                 fire_bullet(playerX, bulletY)
 
         if event.type == pygame.KEYUP:
@@ -87,8 +88,13 @@ while running:
 
     screen.blit(background, (0, 0))
 
+    if bulletY <= 0 :
+        bulletY = 480
+        bullet_state = "ready"
+
+
     if bullet_state is "fire":
-        fire_bullet(playerX, bulletY)
+        fire_bullet(bulletX, bulletY)
         bulletY -= bulletY_Change
 
     draw_player(playerX, playerY)
