@@ -4,6 +4,8 @@ import random
 pygame.init()
 screen = pygame.display.set_mode((800, 600))
 
+background = pygame.image.load('spaceBackGround.jpg')
+
 pygame.display.set_caption("first game")
 icon = pygame.image.load('ufo.png')
 pygame.display.set_icon(icon)
@@ -18,6 +20,13 @@ enemyX = random.randint(0, 800)
 enemyY = random.randint(50, 150)
 enemyX_Change = 2
 enemyY_Change = 40
+
+bulletImg = pygame.image.load('bullet.png')
+bulletX = 0
+bulletY = 480
+bulletX_Change = 0
+bulletY_Change = 40
+bullet_state = "ready"
 
 
 def draw_player(x, y):
@@ -65,6 +74,7 @@ while running:
 
 
     screen.fill((0, 0, 0))
+    screen.blit(background, (0, 0))
     draw_player(playerX, playerY)
     draw_enemy(enemyX, enemyY)
     pygame.display.update()
