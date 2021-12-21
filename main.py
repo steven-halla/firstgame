@@ -37,10 +37,10 @@ while running:
 
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
-                playerX_Change = -0.9
+                playerX_Change = -2.9
 
             if event.key == pygame.K_RIGHT:
-                playerX_Change = 0.9
+                playerX_Change = 2.9
 
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
