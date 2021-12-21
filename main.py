@@ -36,6 +36,11 @@ def draw_player(x, y):
 def draw_enemy(x, y):
     screen.blit(enemyImg, (x, y))
 
+def fire_bullet(x, y):
+    global bullet_state
+    bullet_state = "fire"
+    screen.blit(bulletImg, (x, y))
+
 
 running = True
 
