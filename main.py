@@ -113,6 +113,8 @@ while running:
     if collision:
         bulletY = 480
         bullet_state = "ready"
+        score += 1
+        print(score)
 
 
     draw_player(playerX, playerY)
